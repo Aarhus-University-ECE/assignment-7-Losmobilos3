@@ -3,6 +3,7 @@ project(template)
 include(CTest)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_OSX_ARCHITECTURES "x86_64")
 
 # static checks
 # if(MSVC)
@@ -28,7 +29,7 @@ add_library(mymath src/stack.c src/taylor_sine.c )
 target_include_directories(mymath PUBLIC include)
 
 # define executable named main for experimenting and debugging code
-add_executable(main src/main.cpp)
+add_executable(main src/main.c)
 target_link_libraries(main mymath)
 
 # tests are added by declaring a target, in this case 'tests'. additional tests
